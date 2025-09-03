@@ -2,6 +2,20 @@
 
 Site web officiel du restaurant Sel & Braise - Bistronomie méditerranéenne au feu de bois à Paris.
 
+## ✨ Features
+
+- 🏠 **Landing Page** moderne avec hero vidéo/image
+- 🍽️ **Carte interactive** avec filtres par catégorie
+- 📝 **Blog culinaire** en MDX avec articles de saison
+- 📞 **Réservations** avec formulaire de contact
+- 🖼️ **Galerie photos** optimisées (AVIF/WebP)
+- 📱 **Responsive design** mobile-first
+- ♿ **Accessibilité** complète (alt texts, navigation clavier)
+- 🚀 **Performance** optimisée (Next.js 14+, Tailwind v4)
+- 🎨 **Images professionnelles** : 37 photos Unsplash optimisées
+- 🌐 **SEO** avancé avec metadata et JSON-LD
+- 🇫🇷 **Contenu français** natif avec i18n ready
+
 ## 🚀 Stack technique
 
 - **Framework:** Next.js 14+ (App Router)
@@ -136,22 +150,43 @@ Contenu de l'astuce
 - Liens avec ancres automatiques
 - Code syntax highlighting
 
-## 🖼️ Images
+## 🖼️ Images ✨
 
-### Structure recommandée
+### Structure optimisée (PRODUCTION READY)
 ```
 public/images/
-├── hero-restaurant.jpg     # Image héro homepage
-├── dish-1.jpg, dish-2.jpg  # Plats signature
-├── gallery-1.jpg à gallery-6.jpg  # Galerie
-├── blog/                   # Images articles
-└── og-image.jpg           # Image partage social
+├── hero/                   # Images héro (2 tailles × 3 formats)
+│   ├── hero-woodfire-1920x1280.jpg/webp/avif
+│   └── hero-woodfire-2400x1600.jpg/webp/avif
+├── dishes/                 # Plats signature (2 tailles)
+│   ├── signature-fish-1600x1600.jpg
+│   ├── signature-veg-1600x1600.jpg
+│   └── signature-meat-1600x1600.jpg
+├── gallery/                # Galerie restaurant (6 images)
+│   ├── gallery-1-1200x800.jpg (plat méditerranéen)
+│   ├── gallery-2-1200x800.jpg (ambiance restaurant)
+│   ├── gallery-3-1200x800.jpg (feu de bois)
+│   ├── gallery-4-1200x800.jpg (cuisson au grill)
+│   ├── gallery-5-1200x800.jpg (romarin frais)
+│   └── gallery-6-1200x800.jpg (herbes aromatiques)
+├── blog/                   # Couvertures articles (1600x900)
+│   ├── cover-feu-de-bois-1600x900.jpg
+│   ├── cover-saisonnalite-1600x900.jpg
+│   └── cover-vins-nature-1600x900.jpg
+├── seo/                    # Images réseaux sociaux
+│   ├── og-default-1200x630.jpg
+│   └── og-square-1200x1200.jpg
+├── alt.json               # Descriptions accessibilité (FR)
+└── credits.json           # Attributions Unsplash
 ```
 
-### Formats et optimisation
-- Utilisez WebP/AVIF si possible
-- Taille recommandée : 1200x630px pour les images de couverture
-- Next.js Image optimise automatiquement
+### Optimisations appliquées
+- **37 images** professionnelles d'Unsplash (licence commerciale)
+- **Formats multiples** : AVIF (60%), WebP (72%), JPEG (78%)
+- **Tailles responsive** : Hero (1920×1280, 2400×1600), Plats (1600×1600)
+- **Sharp.js pipeline** : Compression optimale sans perte de qualité
+- **Métadonnées complètes** : Alt texts français + crédits sources
+- **Taille totale** : 8.43 MB seulement pour 37 fichiers optimisés
 
 ## 🚀 Déploiement
 
