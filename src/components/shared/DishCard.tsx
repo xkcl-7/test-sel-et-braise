@@ -11,41 +11,44 @@ interface DishCardProps {
 
 export function DishCard({ dish, showPrice = true, imageUrl }: DishCardProps) {
   return (
-    <Card className="group hover:shadow-lg transition-shadow duration-300">
+    <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-card/80 backdrop-blur-sm">
       {imageUrl && (
-        <div className="relative h-48 overflow-hidden rounded-t-lg">
+        <div className="relative h-48 sm:h-52 lg:h-56 overflow-hidden rounded-t-lg">
           <Image
             src={imageUrl}
             alt={dish.name}
             fill
-            className="object-cover group-hover:scale-105 transition-transform duration-300"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className="object-cover group-hover:scale-110 transition-transform duration-500 ease-out"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1440px) 33vw, 400px"
           />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         </div>
       )}
       
-      <CardContent className="p-6">
-        <div className="flex justify-between items-start mb-2">
-          <h3 className="text-lg font-semibold text-foreground">{dish.name}</h3>
+      <CardContent className="p-4 sm:p-5 lg:p-6">
+        <div className="flex justify-between items-start mb-3">
+          <h3 className="text-base sm:text-lg font-semibold text-foreground leading-tight pr-2">
+            {dish.name}
+          </h3>
           {showPrice && (
-            <span className="text-lg font-semibold text-accent ml-2">
+            <span className="text-lg sm:text-xl font-bold text-accent shrink-0">
               {dish.price}€
             </span>
           )}
         </div>
         
-        <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
+        <p className="text-muted-foreground text-sm sm:text-base mb-4 leading-relaxed">
           {dish.description}
         </p>
         
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-1.5 sm:gap-2">
           {dish.vegetarian && (
-            <Badge variant="secondary" className="text-xs">
+            <Badge variant="secondary" className="text-xs sm:text-sm font-medium px-2 py-1">
               Végétarien
             </Badge>
           )}
           {dish.allergens && dish.allergens.length > 0 && (
-            <Badge variant="outline" className="text-xs">
+            <Badge variant="outline" className="text-xs sm:text-sm font-medium px-2 py-1">
               Allergènes: {dish.allergens.join(', ')}
             </Badge>
           )}

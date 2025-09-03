@@ -9,16 +9,16 @@ interface SectionProps {
 
 const paddingClasses = {
   none: '',
-  sm: 'py-8',
-  md: 'py-12',
-  lg: 'py-16',
-  xl: 'py-24',
+  sm: 'py-6 sm:py-8',
+  md: 'py-8 sm:py-12 lg:py-16',
+  lg: 'py-12 sm:py-16 lg:py-20 xl:py-24',
+  xl: 'py-16 sm:py-20 lg:py-24 xl:py-32',
 };
 
 const backgroundClasses = {
   none: '',
-  muted: 'bg-muted/30',
-  accent: 'bg-accent/5',
+  muted: 'bg-gradient-to-b from-muted/20 to-muted/40',
+  accent: 'bg-gradient-to-b from-accent/5 to-accent/10',
 };
 
 export function Section({ 
