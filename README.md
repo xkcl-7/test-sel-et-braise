@@ -1,6 +1,14 @@
 # Sel & Braise - Restaurant Landing Page
 
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fxkcl-7%2Ftest-sel-et-braise)
+[![Next.js](https://img.shields.io/badge/Next.js-15.5-black?style=flat&logo=next.js)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.9-blue?style=flat&logo=typescript)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.1-38B2AC?style=flat&logo=tailwind-css)](https://tailwindcss.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 Site web officiel du restaurant Sel & Braise - Bistronomie méditerranéenne au feu de bois à Paris.
+
+**🎯 Production Ready** | **📱 Responsive** | **♿ Accessible** | **🚀 Optimisé**
 
 ## ✨ Features
 
@@ -281,8 +289,28 @@ Configurez `NEXT_PUBLIC_RESERVATION_IFRAME_URL` dans `.env.local`.
 ### Contact
 Pour toute question technique, créez une issue GitHub ou contactez l'équipe de développement.
 
+## 🔗 Liens utiles
+
+- 🌐 **[Démo Live](https://test-sel-et-braise.vercel.app)** (À venir après déploiement)
+- 📱 **[Mobile Preview](https://test-sel-et-braise.vercel.app)** - Version mobile
+- 📊 **[Lighthouse Score](https://pagespeed.web.dev/)** - Performance & SEO
+- 🎨 **[Design System](src/components/ui/)** - Components shadcn/ui
+- 📝 **[Blog MDX](content/blog/)** - Articles de saison
+- 🖼️ **[Images Credits](public/images/credits.json)** - Attributions Unsplash
+
+## 👥 Contribution
+
+1. Fork le projet
+2. Créez votre branche (`git checkout -b feature/ma-feature`)
+3. Commitez vos changements (`git commit -m 'Ajout ma feature'`)
+4. Poussez vers la branche (`git push origin feature/ma-feature`)
+5. Ouvrez une Pull Request
+
 ---
 
-**Version:** 1.0.0  
+**Version:** 1.0.0 | **Production Ready** ✅  
 **Licence:** MIT  
-**Dernière mise à jour:** Février 2024
+**Dernière mise à jour:** Septembre 2025  
+**Images:** 37 photos professionnelles optimisées (8.43 MB)
+
+🔥 **Prêt pour le déploiement Vercel en un clic !**
