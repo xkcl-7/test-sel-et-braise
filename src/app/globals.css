@@ -1,26 +1,105 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* Restaurant Brand Colors */
+  --color-brand-charcoal: #0F0F0F;
+  --color-brand-sand: #FAF7F2;
+  --color-brand-terracotta: #C96E4E;
+  --color-brand-sage: #A3B79F;
+
+  /* Base Colors - Mapped to brand */
+  --color-background: var(--color-brand-charcoal);
+  --color-foreground: var(--color-brand-sand);
+  --color-accent: var(--color-brand-terracotta);
+  --color-muted: var(--color-brand-sage);
+  
+  /* UI Colors */
+  --color-card: var(--color-brand-charcoal);
+  --color-card-foreground: var(--color-brand-sand);
+  --color-popover: var(--color-brand-charcoal);
+  --color-popover-foreground: var(--color-brand-sand);
+  --color-primary: var(--color-brand-terracotta);
+  --color-primary-foreground: var(--color-brand-sand);
+  --color-secondary: var(--color-brand-sage);
+  --color-secondary-foreground: var(--color-brand-charcoal);
+  --color-muted-foreground: color-mix(in srgb, var(--color-brand-sage) 80%, var(--color-brand-sand) 20%);
+  --color-accent-foreground: var(--color-brand-sand);
+  --color-destructive: #DC2626;
+  --color-destructive-foreground: var(--color-brand-sand);
+  --color-border: color-mix(in srgb, var(--color-brand-sage) 30%, transparent 70%);
+  --color-input: color-mix(in srgb, var(--color-brand-sage) 20%, transparent 80%);
+  --color-ring: var(--color-brand-terracotta);
+
+  /* Typography */
+  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  
+  /* Spacing & Borders */
+  --radius: 12px;
+  --radius-sm: 8px;
+  --radius-md: 10px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Dark mode overrides */
+.dark {
+  --color-background: var(--color-brand-sand);
+  --color-foreground: var(--color-brand-charcoal);
+  --color-card: var(--color-brand-sand);
+  --color-card-foreground: var(--color-brand-charcoal);
+  --color-popover: var(--color-brand-sand);
+  --color-popover-foreground: var(--color-brand-charcoal);
+  --color-secondary-foreground: var(--color-brand-sand);
+  --color-muted-foreground: color-mix(in srgb, var(--color-brand-sage) 80%, var(--color-brand-charcoal) 20%);
+  --color-accent-foreground: var(--color-brand-sand);
+  --color-destructive-foreground: var(--color-brand-sand);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Base styles */
+* {
+  border-color: var(--color-border);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-feature-settings: "rlig" 1, "calt" 1;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus styles */
+:focus-visible {
+  outline: 2px solid var(--color-ring);
+  outline-offset: 2px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-muted);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-muted-foreground);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }

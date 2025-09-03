@@ -1,0 +1,90 @@
+[
+  {
+    "file": "hero/hero-woodfire-1920x1280.jpg",
+    "source": "Unsplash",
+    "url": "https://unsplash.com/photos/closeup-photo-of-bonfire-Np5GnOfsfo0",
+    "author": "Danny de Jong",
+    "license": "Unsplash License",
+    "retrievedAt": "2025-09-03"
+  },
+  {
+    "file": "hero/hero-woodfire-2400x1600.jpg",
+    "source": "Unsplash",
+    "url": "https://unsplash.com/photos/closeup-photo-of-bonfire-Np5GnOfsfo0",
+    "author": "Danny de Jong",
+    "license": "Unsplash License",
+    "retrievedAt": "2025-09-03"
+  },
+  {
+    "file": "dishes/signature-fish-1600x1600.jpg",
+    "source": "Unsplash",
+    "url": "https://unsplash.com/photos/fire-on-black-charcoal-grill-q_xW-2ICvfA",
+    "author": "iulian aghei",
+    "license": "Unsplash License",
+    "retrievedAt": "2025-09-03"
+  },
+  {
+    "file": "dishes/signature-veg-1600x1600.jpg",
+    "source": "Unsplash", 
+    "url": "https://unsplash.com/photos/sliced-vegetables-on-green-ceramic-plate-AfsZ1KC2huY",
+    "author": "Farhad Ibrahimzade",
+    "license": "Unsplash License",
+    "retrievedAt": "2025-09-03"
+  },
+  {
+    "file": "dishes/signature-meat-1600x1600.jpg",
+    "source": "Unsplash",
+    "url": "https://unsplash.com/photos/gray-metal-tong-and-grilled-meat-with-fire-jeiqzOgwwKU",
+    "author": "Paul Hermann", 
+    "license": "Unsplash License",
+    "retrievedAt": "2025-09-03"
+  },
+  {
+    "file": "gallery/gallery-1-1200x800.jpg",
+    "source": "Unsplash",
+    "url": "https://unsplash.com/photos/grilled-meat-and-vegetable-on-the-table-UC0HZdUitWY",
+    "author": "Victoria Shes",
+    "license": "Unsplash License",
+    "retrievedAt": "2025-09-03"
+  },
+  {
+    "file": "gallery/gallery-2-1200x800.jpg",
+    "source": "Unsplash", 
+    "url": "https://unsplash.com/photos/text-1qiifK3y8FE",
+    "author": "Daniel Hooper",
+    "license": "Unsplash License",
+    "retrievedAt": "2025-09-03"
+  },
+  {
+    "file": "gallery/gallery-3-1200x800.jpg",
+    "source": "Unsplash",
+    "url": "https://unsplash.com/photos/burning-firelogs-PR0ENPY0P9c",
+    "author": "Emerson Peters",
+    "license": "Unsplash License",
+    "retrievedAt": "2025-09-03"
+  },
+  {
+    "file": "gallery/gallery-4-1200x800.jpg",
+    "source": "Unsplash",
+    "url": "https://unsplash.com/photos/a-person-is-grilling-sausages-and-vegetables-on-a-grill-sO9b3dZnOPc",
+    "author": "Markus Spiske",
+    "license": "Unsplash License",
+    "retrievedAt": "2025-09-03"
+  },
+  {
+    "file": "gallery/gallery-5-1200x800.jpg",
+    "source": "Unsplash",
+    "url": "https://unsplash.com/photos/green-rosemary-plant-R8Ct7Macnus",
+    "author": "Vincent Foret",
+    "license": "Unsplash License",
+    "retrievedAt": "2025-09-03"
+  },
+  {
+    "file": "gallery/gallery-6-1200x800.jpg",
+    "source": "Unsplash",
+    "url": "https://unsplash.com/photos/a-close-up-of-a-plant-with-lots-of-green-leaves-C4qF96OqM4w",
+    "author": "Ian Yates",
+    "license": "Unsplash License",
+    "retrievedAt": "2025-09-03"
+  }
+]

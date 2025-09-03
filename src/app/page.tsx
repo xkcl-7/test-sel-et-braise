@@ -1,103 +1,158 @@
-import Image from "next/image";
+import { Hero } from "@/components/shared/Hero";
+import { Container } from "@/components/shared/Container";
+import { Section } from "@/components/shared/Section";
+import { DishCard } from "@/components/shared/DishCard";
+import { PhotoGrid } from "@/components/shared/PhotoGrid";
+import { ReservationCta } from "@/components/shared/ReservationCta";
+import { Reviews } from "@/components/shared/Reviews";
+import { MapBlock } from "@/components/shared/MapBlock";
+import { NewsletterForm } from "@/components/shared/NewsletterForm";
+import { menuData } from "@/data/menu";
+import { Flame, Leaf, Wine } from "lucide-react";
+
+// Featured dishes - first 3 mains
+const featuredDishes = menuData.filter(dish => dish.category === 'plats').slice(0, 3);
+
+const usps = [
+  {
+    icon: Flame,
+    title: "Feu de bois",
+    description: "Cuisson authentique au feu de bois pour des saveurs uniques"
+  },
+  {
+    icon: Leaf,
+    title: "Saisonnalité",
+    description: "Produits frais et de saison, sélectionnés avec soin"
+  },
+  {
+    icon: Wine,
+    title: "Vins nature",
+    description: "Sélection de vins nature et biodynamiques"
+  }
+];
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <>
+      <Hero />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      {/* Featured Dishes */}
+      <Section>
+        <Container>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">Signatures du Chef</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Découvrez nos plats emblématiques, préparés avec passion et savoir-faire
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {featuredDishes.map((dish, index) => {
+              const dishImages = [
+                '/images/dishes/signature-fish-1600x1600.jpg',
+                '/images/dishes/signature-veg-1600x1600.jpg', 
+                '/images/dishes/signature-meat-1600x1600.jpg'
+              ];
+              return (
+                <DishCard 
+                  key={dish.id} 
+                  dish={dish} 
+                  showPrice={false}
+                  imageUrl={dishImages[index]}
+                />
+              );
+            })}
+          </div>
+        </Container>
+      </Section>
+
+      {/* USPs */}
+      <Section background="muted">
+        <Container>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {usps.map((usp, index) => {
+              const Icon = usp.icon;
+              return (
+                <div key={index} className="text-center">
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-accent/10 rounded-full mb-4">
+                    <Icon className="w-8 h-8 text-accent" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2">{usp.title}</h3>
+                  <p className="text-muted-foreground">{usp.description}</p>
+                </div>
+              );
+            })}
+          </div>
+        </Container>
+      </Section>
+
+      {/* Photo Gallery */}
+      <Section>
+        <Container>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">Ambiance & Saveurs</h2>
+            <p className="text-lg text-muted-foreground">
+              Un aperçu de notre univers culinaire
+            </p>
+          </div>
+          
+          <PhotoGrid />
+        </Container>
+      </Section>
+
+      {/* Reservation CTA */}
+      <ReservationCta />
+
+      {/* Reviews */}
+      <Section>
+        <Container>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">Avis de nos clients</h2>
+          </div>
+          
+          <Reviews />
+        </Container>
+      </Section>
+
+      {/* Location & Info */}
+      <Section background="muted">
+        <Container>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div>
+              <h2 className="text-3xl font-bold mb-6">Nous trouver</h2>
+              
+              <div className="space-y-6">
+                <div>
+                  <h3 className="text-lg font-semibold mb-2">Adresse</h3>
+                  <p className="text-muted-foreground">
+                    12 rue des Gravilliers<br />
+                    75003 Paris
+                  </p>
+                </div>
+                
+                <div>
+                  <h3 className="text-lg font-semibold mb-2">Contact</h3>
+                  <p className="text-muted-foreground">
+                    <a href="tel:+33142742847" className="hover:text-accent transition-colors">
+                      01 42 74 28 47
+                    </a>
+                  </p>
+                </div>
+                
+                <div>
+                  <h3 className="text-lg font-semibold mb-4">Newsletter</h3>
+                  <NewsletterForm />
+                </div>
+              </div>
+            </div>
+            
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Localisation</h3>
+              <MapBlock />
+            </div>
+          </div>
+        </Container>
+      </Section>
+    </>
   );
 }
